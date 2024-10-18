@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Monedas Virtuales</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>La mejor tienda de monedas y recursos virtuales</h1>
+    </header>
+
+    <main id="productos" class="contenedor">
+        <section class="categoria">
+            <h2>Robux</h2>
+            <div class="productos-grid" id="robux"></div>
+        </section>
+
+        <section class="categoria">
+            <h2>Pubg UC</h2>
+            <div class="productos-grid" id="pubg-uc"></div>
+        </section>
+
+        <section class="categoria">
+            <h2>Pavos</h2>
+            <div class="productos-grid" id="pavos"></div>
+        </section>
+
+        <section class="categoria">
+            <h2>Minecoins</h2>
+            <div class="productos-grid" id="minecoins"></div>
+        </section>
+
+        <section class="categoria">
+            <h2>Gemas Clash Royale</h2>
+            <div class="productos-grid" id="clash-royale"></div>
+        </section>
+
+        <section class="categoria">
+            <h2>Gemas Dragon City</h2>
+            <div class="productos-grid" id="dragon-city"></div>
+        </section>
+
+        <section class="categoria">
+            <h2>Diamantes Free Fire</h2>
+            <div class="productos-grid" id="free-fire"></div>
+        </section>
+
+        <section class="categoria">
+            <h2>CodPoints</h2>
+            <div class="productos-grid" id="codpoints"></div>
+        </section>
+    </main>
+
+    <section id="carrito" class="contenedor">
+        <h2>Carrito de Compras</h2>
+        <table id="lista-carrito" class="table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="total-carrito">
+            <strong>Total: $<span id="total">0.00</span></strong>
+        </div>
+        <button id="comprar" class="btn-comprar">Finalizar Compra</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
