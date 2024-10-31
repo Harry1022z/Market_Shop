@@ -37,9 +37,9 @@ function displayProducts() {
             <div class="product-card">
                 <img src="${product.image}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p>Precio: ${product.price} COP</p>
-                <p>Cantidad disponible: ${product.quantity}</p>
-                <button onclick="addToCart(${index})">Agregar al Carrito</button>
+                <p>Price: ${product.price} COP</p>
+                <p>Available quantity: ${product.quantity}</p>
+                <button onclick="addToCart(${index})">Add to cart</button>
             </div>
         `;
         productsContainer.innerHTML += productCard;
@@ -61,11 +61,11 @@ function addToCart(index) {
         displayProducts();
         displayCart();
     } else {
-        alert('Producto agotado');
+        alert('Product out of stock');
     }
 }
 
-// Mostrar carrito
+// Display cart
 function displayCart() {
     const cartTableBody = document.querySelector('#cart tbody');
     cartTableBody.innerHTML = '';
@@ -79,7 +79,7 @@ function displayCart() {
                     <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)">
                 </td>
                 <td>${total} COP</td>
-                <td><button class="remove-button" onclick="removeFromCart(${index})">Quitar</button></td>
+                <td><button class="remove-button" onclick="removeFromCart(${index})">Remove</button></td>
             </tr>
         `;
         cartTableBody.innerHTML += cartRow;
@@ -100,7 +100,7 @@ function updateQuantity(index, quantity) {
             cart[index].quantity = quantity;
             product.quantity -= difference;
         } else {
-            alert('No hay suficiente cantidad disponible');
+            alert('Insufficient available quantity');
             displayCart();
         }
     }
@@ -121,7 +121,7 @@ function removeFromCart(index) {
 
 // Calcular y mostrar total del carrito
 function updateTotal() {
-    const totalElement = document.getElementById('total');
+    const totalElement = document.getElementById('Total');
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     totalElement.textContent = `Total: ${total} COP`;
 }
@@ -219,7 +219,7 @@ function showManageProducts() {
 function checkout() {
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     if (total > 0) {
-        alert(`Total a pagar: ${total} COP`);
+        alert(`Total to pay: ${total} COP`);
         cart = [];
         saveToLocalStorage();
         displayProducts();
@@ -228,7 +228,7 @@ function checkout() {
             showProducts();
         }, 2000);
     } else {
-        alert('El carrito está vacío.');
+        alert('The cart is empty.');
     }
 }
 
